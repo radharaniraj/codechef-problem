@@ -1,0 +1,47 @@
+#include <iostream>
+using  namespace std;
+int main() {
+    int n,m ,k,t1=0,t2=0,t3=0,t4=0,t5=0;
+    cin>>n>>m>>k;
+    int arr[n][m];
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=m;j++)
+        {
+           for(int i=1;i<=k;i++) {
+               int r, c;
+               cin >> r >> c;
+               arr[r][c] = '*';
+
+               if ((arr[r][c] = '*') && (arr[r][c + 1] != '*') && (arr[r + 1][c] != '*') && (arr[r - 1][c] != '*') &&
+                   (arr[r][c - 1] != '*')) {
+                   t1 = 4;
+                   t1 = t1 + 4;
+               }
+               if ((arr[r][c] = '*') && (arr[r][c + 1] = '*') && (arr[r + 1][c] != '*') && (arr[r - 1][c] != '*') &&
+                   (arr[r][c - 1] != '*')) {
+                   t2 = 3;
+                   t2 = t2 + 3;
+               }
+               if ((arr[r][c] = '*') && (arr[r][c + 1] = '*') && (arr[r + 1][c] = '*') && (arr[r - 1][c] != '*') &&
+                   (arr[r][c - 1] != '*')) {
+                   t3 = 2;
+                   t3 = t3 + 2;
+               }
+               if ((arr[r][c] = '*') && (arr[r][c + 1] = '*') && (arr[r + 1][c] = '*') && (arr[r - 1][c] = '*') &&
+                   (arr[r][c - 1] != '*')) {
+                   t4 = 1;
+                   t4 = t4 + 4;
+               }
+               if ((arr[r][c] = '*') && (arr[r][c + 1] = '*') && (arr[r + 1][c] = '*') && (arr[r - 1][c] = '*') &&
+                   (arr[r][c - 1] = '*')) {
+                   t5 = 0;
+                   t5 = t5 + 0;
+               }
+           }
+        }
+    }
+    int h=t1+t2+t3+t4+t5;
+    cout<<h;
+    return 0;
+}
